@@ -1,0 +1,61 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon\r
+.Spotlight-V100
+.Trashes
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.apdisk
+.VolumeIcon.icns
+
+# Windows system files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+System Volume Information/
+*.lnk
+
+# Common compiled binaries and objects
+*.exe
+*.dll
+*.obj
+*.o
+*.so
+*.dylib
+*.lib
+*.a
+*.out
+*.class
+*.pyc
+*.pyo
+*.pyd
+
+# Crash logs and system dumps
+*.stackdump
+*.crash
+*.dmp
+
+# Editor-specific files
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# JetBrains (IntelliJ, WebStorm, PyCharm, etc.)
+.idea/
+*.iml
+out/
+.fleet/
+
+# Vim/Emacs backups (common editor artifacts)
+*.swp
+*.swo
+*~
+
+
