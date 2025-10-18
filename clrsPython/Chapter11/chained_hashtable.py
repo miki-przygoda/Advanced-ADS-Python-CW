@@ -30,7 +30,7 @@
 #                                                                       #
 #########################################################################
 
-from dll_sentinel import DLLSentinel
+from clrsPython.Chapter10.dll_sentinel import DLLSentinel
 
 
 class ChainedHashTable:
