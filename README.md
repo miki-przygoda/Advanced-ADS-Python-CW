@@ -24,6 +24,8 @@ When working on a specific chapter in the `clrsPython/` directory, please ensure
 
 ### For Contributors Working on Task Implementations
 
+Before you even get started make sure you create a fork in your desginated pair and work on that section specifically, push your work to github often so the team leader is up to date with everyones work. This will also make it easier for everyone to help one another with the work as everyone will have the up to date version.
+
 When working on task-specific implementations in the `task1/`, `task2/`, `task3/`, or `task4/` folders, please add the following import statements at the top of your Python files:
 
 ```python
