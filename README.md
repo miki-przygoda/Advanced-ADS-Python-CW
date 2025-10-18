@@ -39,7 +39,8 @@ This ensures that your task files can properly import modules from the `clrsPyth
 
 If you're working on Chapter 11 (Hash Tables) and need to use the implementations in your task:
 
-**Step 1:** Ensure `clrsPython/Chapter11/` has an `__init__.py` file
+**Step 1:** Ensure `clrsPython/Chapter11/` has an `__init__.py` file.
+
 **Step 2:** In your task file (e.g., `task2/main.py`), add the import statements:
 
 ```python
