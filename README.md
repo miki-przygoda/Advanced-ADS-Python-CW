@@ -19,7 +19,7 @@ This project is organized into several components:
 
 When working on a specific chapter in the `clrsPython/` directory, please ensure you:
 
-1. **Add an `__init__.py` file** to the chapter folder you are working on
+1. **Add an `__init__.py` file** to the chapter folder you are working on if its not there already.
 2. **Include the necessary import statements** in your task files
 
 ### For Contributors Working on Task Implementations
