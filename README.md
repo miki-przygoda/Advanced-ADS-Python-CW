@@ -62,7 +62,7 @@ from clrsPython.Chapter11.open_address_hashtable import OpenAddressHashTable
 
 The following chapters are available in the `clrsPython/` directory.
 
-Online table of contents can be found [here](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/4e_toc.pdf)
+Online table of contents with coresponding pages to [Introduction to Algorithms, Fourth Edition](https://ebookcentral.proquest.com/lib/gre/detail.action?docID=6925615) can be found [here](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/4e_toc.pdf)
 
 ## Data Files
 
