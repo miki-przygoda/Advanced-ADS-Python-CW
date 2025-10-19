@@ -62,35 +62,7 @@ from clrsPython.Chapter11.open_address_hashtable import OpenAddressHashTable
 
 The following chapters are available in the `clrsPython/` directory:
 
-- **Chapter 2:** Sorting Algorithms (Insertion Sort, Merge Sort)
-- **Chapter 4:** Matrix Operations
-- **Chapter 5:** Randomized Algorithms
-- **Chapter 6:** Heaps and Priority Queues
-- **Chapter 7:** Quicksort
-- **Chapter 8:** Linear Time Sorting (Counting Sort, Radix Sort, Bucket Sort)
-- **Chapter 9:** Order Statistics
-- **Chapter 10:** Elementary Data Structures (Stacks, Queues, Linked Lists)
-- **Chapter 11:** Hash Tables
-- **Chapter 12:** Binary Search Trees
-- **Chapter 13:** Red-Black Trees
-- **Chapter 14:** Dynamic Programming
-- **Chapter 15:** Greedy Algorithms
-- **Chapter 16:** Amortized Analysis
-- **Chapter 17:** Augmenting Data Structures
-- **Chapter 18:** B-Trees
-- **Chapter 19:** Disjoint Set Data Structures
-- **Chapter 20:** Graph Algorithms (BFS, DFS)
-- **Chapter 21:** Minimum Spanning Trees
-- **Chapter 22:** Single-Source Shortest Paths
-- **Chapter 23:** All-Pairs Shortest Paths
-- **Chapter 24:** Maximum Flow
-- **Chapter 25:** Matching Algorithms
-- **Chapter 28:** Linear Programming
-- **Chapter 30:** Fast Fourier Transform
-- **Chapter 31:** Number-Theoretic Algorithms
-- **Chapter 32:** String Matching
-- **Chapter 35:** Approximation Algorithms
-
+Online table of contents with coresponding pages to [Introduction to Algorithms, Fourth Edition](https://ebookcentral.proquest.com/lib/gre/detail.action?docID=6925615) can be found [here](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/4e_toc.pdf)
 
 ## Data Files
 
