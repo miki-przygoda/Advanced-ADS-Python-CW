@@ -17,8 +17,9 @@ class StationRecord:
         name - original station name
         lines - set of line names this station belongs to
         neighbors - dict: neighbor_id - (time_minutes:int, line_name:str|None)
+        active - boolean indicating if the station is active/operational
     """
-    __slots__ = ("key", "id", "name", "lines", "neighbors")
+    __slots__ = ("key", "id", "name", "lines", "neighbors", "active")
 
     def __init__(self, name: str, id_: int):
         self.key = norm(name)
@@ -26,6 +27,7 @@ class StationRecord:
         self.name = name
         self.lines = set()
         self.neighbors = {}
+        self.active = True
 
 
 def _unwrap(node_or_obj):
