@@ -9,7 +9,22 @@ def _is_number(s: str) -> bool:
     except ValueError:
         return False
 
-def read_csv_file():
+
+
+def read_csv_file(debug = False):
+
+    """
+    Data is formated as follows:
+    station_rows: list of list each containing ["StationRow", line, station]
+    e.g. ['StationRow', 'Bakerloo', 'Harrow & Wealdstone']
+    edge_rows: list of list each containing ["EdgeRow", line, a, b, t] - t (numeric text)
+    e.g. ['EdgeRow', 'Bakerloo', 'Harrow & Wealdstone', 'Kenton', '2']
+
+    if debug is True:
+        It will dump the data to console to sanity check the data.
+        Otherwise it will just return the data in their coresponding lists - StationRows, EdgeRows.
+    """
+
     csv_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'London_Underground_data.csv')
     try:
         with open(csv_path, 'r', encoding='utf-8', newline='') as f:
@@ -41,4 +56,10 @@ def read_csv_file():
     except Exception as e:
         print(e)
 
-    return StationRows, EdgeRows
+    if debug is False:
+        return StationRows, EdgeRows
+    else:
+        print("Data extracted successfully")
+        print("StationRows: \n", StationRows)
+        print("EdgeRows: \n", EdgeRows)
+        return StationRows, EdgeRows

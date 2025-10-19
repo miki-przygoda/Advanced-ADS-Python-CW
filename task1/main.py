@@ -1,11 +1,8 @@
 from data_extract import read_csv_file
+from module_wrapper import build_index_from_rows
 
-if __name__ == "__main__":
-    station_rows, edge_rows = read_csv_file()
+station_rows, edge_rows = read_csv_file()
+hashtable, records_by_id = build_index_from_rows(station_rows, edge_rows)
 
-    # for edge in edge_rows:
-    #     print(edge)
-    # for station in station_rows:
-    #     print(station)
-
-    
+for record in records_by_id:
+    print(str(record.id) + " " + str(record.name))
