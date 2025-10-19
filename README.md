@@ -35,7 +35,7 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 ```
 
-This ensures that your task files can properly import modules from the `clrsPython` directory.
+This ensures that your task files can properly import modules from the `clrsPython` directory. This is only necessary if that specific file is accessing the `clrsPython` directory, if it's a file that imports another one of your files as a module then don't worry about it.
 
 ## Example Implementation
 
