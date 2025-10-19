@@ -85,14 +85,3 @@ def build_index_from_rows(station_rows, edge_rows):
             rb.neighbors[ra.id] = (time_min, line)
 
     return ht, records_by_id
-
-
-def is_operational(hashtable, station_name: str) -> bool:
-    """Return True if a station name exists in the hashtable."""
-    return hashtable.search(norm(station_name)) is not None
-
-
-def get_record(hashtable, station_name: str):
-    """Return the StationRecord or None for the given name."""
-    hit = hashtable.search(norm(station_name))
-    return None if hit is None else _unwrap(hit)
