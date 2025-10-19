@@ -1,4 +1,6 @@
-import sys, os, csv
+import sys
+import os
+import csv
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
@@ -10,8 +12,7 @@ def _is_number(s: str) -> bool:
         return False
 
 
-
-def read_csv_file(debug = False):
+def read_csv_file(debug=False):
 
     """
     Data is formated as follows:
@@ -20,7 +21,7 @@ def read_csv_file(debug = False):
     edge_rows: list of list each containing ["EdgeRow", line, a, b, t] - t (numeric text)
     e.g. ['EdgeRow', 'Bakerloo', 'Harrow & Wealdstone', 'Kenton', '2']
 
-    if debug is True:
+    if debug:
         It will dump the data to console to sanity check the data.
         Otherwise it will just return the data in their coresponding lists - StationRows, EdgeRows.
     """
@@ -56,7 +57,7 @@ def read_csv_file(debug = False):
     except Exception as e:
         print(e)
 
-    if debug is False:
+    if not debug:
         return StationRows, EdgeRows
     else:
         print("Data extracted successfully")
