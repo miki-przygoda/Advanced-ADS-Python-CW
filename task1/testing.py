@@ -79,3 +79,20 @@ all_stations = dict(get_all_stations())
 for sid, name in get_all_stations():
     print(str(sid) + " " + str(name))
 print("--------------------------------")
+
+# Added for the sake of the writeup.
+# Manual Aplication testing for writeup:
+
+print("\n--------------------------------\n")
+print("Manual Aplication testing for writeup:\n")
+StationsToAdd = ["A", "B", "C", "D", "E"]
+print(f"Stations to be added: {StationsToAdd}")
+for station in StationsToAdd:
+    insert_station(station)
+
+all_stations = dict(get_all_stations())
+for sid, name in get_all_stations():
+    if sid > 270:
+        print(str(sid) + " " + str(name))
+print("--------------------------------")
+
