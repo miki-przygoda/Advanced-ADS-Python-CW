@@ -1,16 +1,17 @@
 """Mainly to be used for testing APIs and the data structures introduced by task1"""
 
-from data_extract import read_csv_file
-from module_wrapper import build_index_from_rows
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from task1.data_extract import read_csv_file
+from task1.module_wrapper import build_index_from_rows
 from utils.data_api import (
     init_index, is_operational, get_station_id, get_station_name, activate_station, 
     deactivate_station, insert_station, is_station_active, delete_station_by_name, create_edge, get_edge_info,
     get_all_stations
 )
-import sys
-import os
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 station_rows, edge_rows = read_csv_file()
 hashtable, records_by_id = build_index_from_rows(station_rows, edge_rows)
