@@ -102,6 +102,10 @@ to_add = ["A", "B", "C", "D", "E"]
 for station in to_add:
     insert_station(station)
 
+remove = ["C", "A"]
+for station in remove:
+    delete_station_by_name(station)
+
 stations = get_all_stations()
 for station in stations:
     if is_station_active(station[1]):
