@@ -96,3 +96,13 @@ for sid, name in get_all_stations():
         print(str(sid) + " " + str(name))
 print("--------------------------------")
 
+
+stations = get_all_stations()
+to_add = ["A", "B", "C", "D", "E"]
+for station in to_add:
+    insert_station(station)
+
+stations = get_all_stations()
+for station in stations:
+    if is_station_active(station[1]):
+        print(station[1])

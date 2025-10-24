@@ -42,28 +42,36 @@ def init_index(force: bool = False) -> None:
 
 
 def is_operational(name: str) -> bool:
-    """True if the station exists in the index."""
+    """True if the station exists in the index and is active."""
     if _HT is None or _BY_ID is None:
         init_index()
-    return _HT.search(_norm(name)) is not None
+    hit = _HT.search(_norm(name))
+    if hit is None:
+        return False
+    rec = _unwrap(hit)
+    return getattr(rec, "active", True)
 
 def get_station_id(name: str) -> Optional[int]:
-    """Return the integer station id for a given name, or None if not found."""
+    """Return the integer station id for a given name, or None if not found or inactive."""
     if _HT is None or _BY_ID is None:
         init_index()
     hit = _HT.search(_norm(name))
     if hit is None:
         return None
     rec = _unwrap(hit)
+    if not getattr(rec, "active", True):
+        return None
     return getattr(rec, "id", None)
 
 def get_station_name(station_id: int) -> Optional[str]:
-    """Return the station name for a given id, or None if out of range."""
+    """Return the station name for a given id, or None if out of range or inactive."""
     if _BY_ID is None or _HT is None:
         init_index()
     if station_id < 0 or station_id >= len(_BY_ID):
         return None
     rec = _BY_ID[station_id]
+    if not getattr(rec, "active", True):
+        return None
     return getattr(rec, "name", None)
 
 
@@ -213,17 +221,17 @@ def get_edge_info(a_name: str, b_name: str):
 
 
 def get_total_station_count() -> int:
-    """Return the number of stations in the global index."""
+    """Return the number of active stations in the global index."""
     if _HT is None or _BY_ID is None:
         init_index()
-    return len(_BY_ID)
+    return sum(1 for rec in _BY_ID if getattr(rec, "active", True))
 
 
 def get_all_stations() -> list[tuple[int, str]]:
-    """Return a list of (id, name) for all stations in the global index."""
+    """Return a list of (id, name) for all active stations in the global index."""
     if _HT is None or _BY_ID is None:
         init_index()
-    return [(rec.id, rec.name) for rec in _BY_ID]
+    return [(rec.id, rec.name) for rec in _BY_ID if getattr(rec, "active", True)]
 
 __all__ = [
     "init_index",
