@@ -2,6 +2,7 @@
 
 import sys
 import os
+import time as t
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -98,16 +99,48 @@ for sid, name in get_all_stations():
 print("--------------------------------")
 
 
-stations = get_all_stations()
-to_add = ["A", "B", "C", "D", "E"]
-for station in to_add:
-    insert_station(station)
+print("\n--------------------------------")
+print("Performance Testing with 60 Batches of 52 Elements Each (3120 total):")
+print("--------------------------------")
 
-remove = ["C", "A"]
-for station in remove:
-    delete_station_by_name(station)
+batches = []
+for batch_num in range(1, 61):
+    batch = []
+    for suffix in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+        batch.append(f'{batch_num}{suffix}')
+    for suffix in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+        batch.append(f'{batch_num + 60}{suffix}')
+    batches.append(batch)
 
-stations = get_all_stations()
-for station in stations:
-    if is_station_active(station[1]):
-        print(station[1])
+batch_times = []
+for batch_num, batch in enumerate(batches, 1):
+    print(f"\nBatch {batch_num}: Adding {len(batch)} stations...")
+    
+    t0 = t.time()
+    for station in batch:
+        insert_station(station)
+    t1 = t.time()
+
+    total_elements = 276 + (52 * batch_num)
+    
+    batch_time = t1 - t0
+    batch_times.append(batch_time)
+    
+    print(f"Batch {batch_num} completed:")
+    print(f"  - Time to add {len(batch)} stations: {batch_time:.6f} sec")
+    print(f"  - Total elements in system: {total_elements}")
+    print(f"  - Average time per station: {batch_time/len(batch):.6f} sec")
+
+print("\n--------------------------------")
+print("Performance Summary:")
+print("--------------------------------")
+
+# Final summary with all batches
+total_time = sum(batch_times)
+for batch_num, batch in enumerate(batches, 1):
+    total_elements = 276 + (52 * batch_num)
+    print(f"Batch {batch_num}: {len(batch)} stations, Total elements: {total_elements}, Time: {batch_times[batch_num-1]:.6f} sec")
+
+print(f"\nTotal time for all 60 batches: {total_time:.6f} sec")
+print(f"Total stations added: {sum(len(batch) for batch in batches)}")
+print(f"Average time per station: {total_time/sum(len(batch) for batch in batches):.6f} sec")
